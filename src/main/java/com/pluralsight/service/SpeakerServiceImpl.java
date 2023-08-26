@@ -19,6 +19,13 @@ public class SpeakerServiceImpl implements SpeakerService {
     //private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
     private SpeakerRepository repository;
 
+    /*
+     * This is after we implemented Setter Injection, and now we are trying the same with Constructor Injection
+     * */
+    public SpeakerServiceImpl(SpeakerRepository speakerRepository){
+        repository = speakerRepository;
+    }
+
     @Override
     public List<Speaker> findAll(){
         return repository.findAll();

@@ -13,7 +13,7 @@ public class Application {
          /*
          * getBean instead of hardcoded implementation
          * */
-        //SpeakerService service = new SpeakerServiceImpl();
+        //SpeakerService service = new SpeakerServiceImpl();//commented to implement as below
         SpeakerService service = appContext.getBean("speakerService", SpeakerService.class);
 
         System.out.println(service.findAll().get(0).getFirstName());

@@ -23,8 +23,15 @@ public class AppConfig {
          /*
          * Setter Injection
          * */
-        SpeakerServiceImpl speakerService = new SpeakerServiceImpl();
+        /*SpeakerServiceImpl speakerService = new SpeakerServiceImpl(); //commenting as we implement below
         speakerService.setRepository(getSpeakerRepository());
+        return speakerService;*/
+
+        /*
+        * Constructor Injection
+        * it is same as above but we are using the constructor injection way
+        * */
+        SpeakerServiceImpl speakerService = new SpeakerServiceImpl(getSpeakerRepository());
         return speakerService;
     }
 
