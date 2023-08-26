@@ -10,11 +10,18 @@ import java.util.List;
 public class SpeakerServiceImpl implements SpeakerService {
 
     /* initial setup without the spring, later we do use spring and remove the dependency */
-    private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
+
+    /* commenting this as we remove this hardcoded implementation as part of spring upgrade */
+    //private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
+    private SpeakerRepository repository;
 
     @Override
     public List<Speaker> findAll(){
         return repository.findAll();
     }
 
+    /* create a setter using generate->setter->select repository which is used for the setter injection implementation */
+    public void setRepository(SpeakerRepository repository) {
+        this.repository = repository;
+    }
 }
