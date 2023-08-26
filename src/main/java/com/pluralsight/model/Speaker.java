@@ -1,9 +1,12 @@
 package com.pluralsight.model;
 
-/* Speaker model class */
+ /*
+ * Speaker model class
+ * */
 public class Speaker {
-
-//    name variables of the speaker and their getter setter methods
+    /*
+    * name variables of the speaker and their getter setter methods
+    * */
     private String firstName;
     private String lastName;
 

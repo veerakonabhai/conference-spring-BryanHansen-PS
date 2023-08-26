@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
-    /*we wrote first below method and then later extracted it into interface SpeakerRepository with the methods*/
+    /*
+    * we wrote first below method and then later extracted it into interface SpeakerRepository with the methods
+    * */
 
     @Override
     public List<Speaker> findAll(){
