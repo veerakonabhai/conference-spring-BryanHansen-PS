@@ -17,6 +17,16 @@ public class Application {
         SpeakerService service = appContext.getBean("speakerService", SpeakerService.class);
 
         System.out.println(service.findAll().get(0).getFirstName());
+
+        /*
+        * To check if we have the Singleton object returned for a different getBean request
+        * */
+        System.out.println(service); //object address of service
+        SpeakerService service2 = appContext.getBean("speakerService", SpeakerService.class);
+        System.out.println(service2); //object address of service2
+        /*
+        * both prints should be pointed to same object address when scope is "singleton" and different when scope is "prototype"
+        * */
     }
 
 }
