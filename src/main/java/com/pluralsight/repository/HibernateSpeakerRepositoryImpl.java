@@ -1,9 +1,11 @@
 package com.pluralsight.repository;
 
 import com.pluralsight.model.Speaker;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -12,6 +14,9 @@ import java.util.List;
  * */
 @Repository("speakerRepository")
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
+
+    @Autowired
+    private Calendar cal;
     /*
     * we wrote first below method and then later extracted it into interface SpeakerRepository with the methods
     * */
@@ -24,6 +29,8 @@ public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
 
         speaker.setFirstName("Veer");
         speaker.setLastName("Konabhai");
+
+        System.out.println("cal :" + cal.getTime());
 
         speakers.add(speaker);
 
