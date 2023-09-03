@@ -5,6 +5,7 @@ import com.pluralsight.repository.SpeakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /*
@@ -44,6 +45,11 @@ public class SpeakerServiceImpl implements SpeakerService {
     public SpeakerServiceImpl(SpeakerRepository speakerRepository){
         System.out.println("SpeakerServiceImpl repository constructor");
         repository = speakerRepository;
+    }
+
+    @PostConstruct
+    private void initialize(){
+        System.out.println("called after constructors");
     }
 
     @Override
